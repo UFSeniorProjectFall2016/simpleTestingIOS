@@ -66,9 +66,13 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
   override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-       if nickname == nil {
+       /*if nickname == nil {
            askForNickname()
         }
+*/
+    
+    self.tblUserList.reloadData()
+    self.tblUserList.hidden = false
     }
     
     
@@ -79,18 +83,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
 
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier {
-            if identifier == "idSegueJoinChat" {
-                let chatViewController = segue.destinationViewController as! ChatViewController
-                chatViewController.nickname = nickname
-            }
-        }
-    }
-
+  
     
     // MARK: IBAction Methods
     
@@ -124,7 +117,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tblUserList.tableFooterView = UIView(frame: CGRectZero)
     }
     
-    
+    /*
    func askForNickname() {
         let alertController = UIAlertController(title: "SocketChat", message: "Please enter a nickname:", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -153,7 +146,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.addAction(OKAction)
         presentViewController(alertController, animated: true, completion: nil)
     }
-    
+    */
     
     // MARK: UITableView Delegate and Datasource methods
     
@@ -195,7 +188,7 @@ extension UsersViewController: MyCustomTableViewCellDelegate{
         let indexPath = tblUserList.indexPathForCell(cell)
         feedModelArray[indexPath!.row].changed = cell.changed.on
         if(feedModelArray[indexPath!.row].deviceName == "Door"){
-             SocketIOManager.sharedInstance.sendDoor()
+             SocketIOManager.sharedInstance.chooseDevice("#door")
             print("Door")
         }else if(feedModelArray[indexPath!.row].deviceName == "Light"){
         SocketIOManager.sharedInstance.sendLight()

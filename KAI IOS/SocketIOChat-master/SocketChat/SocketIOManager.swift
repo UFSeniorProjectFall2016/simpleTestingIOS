@@ -4,8 +4,11 @@ import UIKit
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
-    
-    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "http://127.0.0.1:3000")!)
+    let local = "http://10.136.96.246:3000"
+    let  webstr = "https://sleepy-inlet-14613.herokuapp.com/"
+    var door = false;
+
+    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://sleepy-inlet-14613.herokuapp.com/")!)
     
     
     override init() {
@@ -15,6 +18,9 @@ class SocketIOManager: NSObject {
     
     func establishConnection() {
         socket.connect()
+        socket.emit("connected_user", "iPhone App User");
+        print("connected");
+        
     }
     
     
@@ -23,15 +29,7 @@ class SocketIOManager: NSObject {
     }
     
     
-    func connectToServerWithNickname(nickname: String, completionHandler: (userList: [[String: AnyObject]]!) -> Void) {
-        socket.emit("connectUser", nickname)
-        
-        socket.on("userList") { ( dataArray, ack) -> Void in
-            completionHandler(userList: dataArray[0] as! [[String: AnyObject]])
-        }
-        
-        listenForOtherMessages()
-    }
+    
     
     
     func exitChatWithNickname(nickname: String, completionHandler: () -> Void) {
@@ -40,39 +38,96 @@ class SocketIOManager: NSObject {
     }
     
     
-    func sendMessage(message: String, withNickname nickname: String) {
-        socket.emit("chatMessage", nickname, message)
+    func chooseDevice(choice: String){
+        switch choice{
+        //door activated
+        case "#door":
+        print("door")
+        
+        let jsonObj = createJson(choice, msg: choice, status: (isDoor()))
+        
+        let valid = NSJSONSerialization.isValidJSONObject(jsonObj)
+        if(valid){
+            print("got it")
+        socket.emit("device status", jsonObj)
+        }
+
+        //light activated
+        case "light":
+            let savedData = ["Something": 1]
+            
+            let jsonObject: [String: AnyObject] = [
+                "type_id": 1,
+                "model_id": 1,
+                "transfer": [
+                    "startDate": "10/04/2015 12:45",
+                    "endDate": "10/04/2015 16:00"
+                ],
+                "custom": savedData
+            ]
+            
+            let valid = NSJSONSerialization.isValidJSONObject(jsonObject)
+            socket.emit("device status", jsonObject)
+
+        //coffee activated
+        case "coffee":
+            let savedData = ["Something": 1]
+            
+            let jsonObject: [String: AnyObject] = [
+                "type_id": 1,
+                "model_id": 1,
+                "transfer": [
+                    "startDate": "10/04/2015 12:45",
+                    "endDate": "10/04/2015 16:00"
+                ],
+                "custom": savedData
+            ]
+            
+            let valid = NSJSONSerialization.isValidJSONObject(jsonObject)
+            socket.emit("device status", jsonObject)
+
+        //window activated
+        case"window":
+            let savedData = ["Something": 1]
+            
+            let jsonObject: [String: AnyObject] = [
+                "type_id": 1,
+                "model_id": 1,
+                "transfer": [
+                    "startDate": "10/04/2015 12:45",
+                    "endDate": "10/04/2015 16:00"
+                ],
+                "custom": savedData
+            ]
+            
+            let valid = NSJSONSerialization.isValidJSONObject(jsonObject)
+            socket.emit("device status", jsonObject)
+
+            
+        default:
+            print("error occured")
+            
+        }
+    
+    }
+    
+    
+    func createJson(id : String, msg: String, status: Bool) -> [String: AnyObject]{
+        
+        let jsonObject: [String: AnyObject] = [
+            "id": id,
+            "name": msg,
+            "status": status
+        ]
+        print(jsonObject)
+        return jsonObject
+
         
     }
-    
-    func sendDoor(){
-       socket.emit("device status", "{id:'#door', name: 'Door locked: ',status: ('#door').prop('checked')}")
+    func sendJson(jsonObj : [String: AnyObject]){
+        socket.emit("device status", jsonObj)
     }
     
-    func sendLight(){
-        socket.emit("device status", "{id:'#light', name: 'Light OFF: ',status: ('#light').prop('checked')}")
-    }
-    
-    func sendCoffee(){
-        socket.emit("device status", "{id:'#coffee', name: 'Coffee Machine OFF: ',status: ('#coffee').prop('checked')}")
-    }
-    
-    func sendWindow(){
-        socket.emit("device status", "{id:'#wind', name: 'Windows closed: ',status: ('#wind').prop('checked')}")
-    }
-    
-    
-    
-    func getChatMessage(completionHandler: (messageInfo: [String: AnyObject]) -> Void) {
-        socket.on("newChatMessage") { (dataArray, socketAck) -> Void in
-            var messageDictionary = [String: AnyObject]()
-            messageDictionary["nickname"] = dataArray[0] as! String
-            messageDictionary["message"] = dataArray[1] as! String
-            messageDictionary["date"] = dataArray[2] as! String
-            
-            completionHandler(messageInfo: messageDictionary)
-        }
-    }
     
     
     private func listenForOtherMessages() {
@@ -89,6 +144,10 @@ class SocketIOManager: NSObject {
         }
     }
     
+    func isDoor()->Bool {
+        door = !door
+        return door;
+    }
     
     func sendStartTypingMessage(nickname: String) {
         socket.emit("startType", nickname)
