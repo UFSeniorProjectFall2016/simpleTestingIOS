@@ -1,16 +1,9 @@
-//
-//  UsersViewController.swift
-//  SocketChat
-//
-//  Created by Gabriel Theodoropoulos on 1/31/16.
-//  Copyright © 2016 AppCoda. All rights reserved.
-//
 
 import UIKit
 var newModel = MyCustomTableViewCellModel()
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tblUserList: UITableView!
     var feedModelArray = [MyCustomTableViewCellModel]()
     
@@ -29,11 +22,11 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
         tblUserList.registerNib(UINib(nibName: "MyCustomTableViewCell", bundle: nil), forCellReuseIdentifier:"MyCustomCell")
     }
-
+    
     func fillDataArray(){
         for index in 0..<4{
-             let newModel = MyCustomTableViewCellModel()
-
+            let newModel = MyCustomTableViewCellModel()
+            
             if index == 0 {
                 newModel.deviceName = "Door"
             } else if index == 1 {
@@ -48,7 +41,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
     }
-
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,20 +53,20 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
-
     
     
-  override func viewDidAppear(animated: Bool) {
+    
+  /*  override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-       /*if nickname == nil {
-           askForNickname()
+        if nickname == nil {
+            askForNickname()
         }
-*/
-    
-    self.tblUserList.reloadData()
-    self.tblUserList.hidden = false
-    }
+        self.tblUserList.reloadData()
+        self.tblUserList.hidden = false
+        
+
+    }*/
     
     
     override func didReceiveMemoryWarning() {
@@ -81,13 +74,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-
-
-  
+    
+    
+    // MARK: - Navigation
+    
+   
+    
     
     // MARK: IBAction Methods
     
-   @IBAction func exitChat(sender: AnyObject) {
+    @IBAction func exitChat(sender: AnyObject) {
         SocketIOManager.sharedInstance.exitChatWithNickname(nickname) { () -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.nickname = nil
@@ -97,7 +93,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             })
         }
     }
-
+    
     
     
     // MARK: Custom Methods
@@ -105,7 +101,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func configureNavigationBar() {
         navigationItem.title = "KAI"
         UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
-
+        
     }
     
     
@@ -117,8 +113,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tblUserList.tableFooterView = UIView(frame: CGRectZero)
     }
     
-    /*
-   func askForNickname() {
+    
+   /* func askForNickname() {
         let alertController = UIAlertController(title: "SocketChat", message: "Please enter a nickname:", preferredStyle: UIAlertControllerStyle.Alert)
         
         alertController.addTextFieldWithConfigurationHandler(nil)
@@ -142,11 +138,11 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 })
             }
         }
-
+        
         alertController.addAction(OKAction)
         presentViewController(alertController, animated: true, completion: nil)
-    }
-    */
+    }*/
+    
     
     // MARK: UITableView Delegate and Datasource methods
     
@@ -161,7 +157,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       // let cell = tableView.dequeueReusableCellWithIdentifier("idCellUser", forIndexPath: indexPath) as! UserCell
+        // let cell = tableView.dequeueReusableCellWithIdentifier("idCellUser", forIndexPath: indexPath) as! UserCell
         
         //cell.textLabel?.text = users[indexPath.row]["nickname"] as? String
         //cell.detailTextLabel?.text = (users[indexPath.row]["isConnected"] as! Bool) ? "Online" : "Offline"
@@ -178,27 +174,47 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 44.0
     }
     
-   
+    
     
     
 }
 
 extension UsersViewController: MyCustomTableViewCellDelegate{
+    
     func didTappedSwitch(cell: MyCustomTableViewCell){
+        
         let indexPath = tblUserList.indexPathForCell(cell)
+        
         feedModelArray[indexPath!.row].changed = cell.changed.on
+        
         if(feedModelArray[indexPath!.row].deviceName == "Door"){
-             SocketIOManager.sharedInstance.chooseDevice("#door")
+            
+            SocketIOManager.sharedInstance.chooseDevice("#door")
+            
             print("Door")
+            
         }else if(feedModelArray[indexPath!.row].deviceName == "Light"){
-        SocketIOManager.sharedInstance.sendLight()
+            
+            SocketIOManager.sharedInstance.chooseDevice("#light")
+            
             print("Light")
+            
         }else if(feedModelArray[indexPath!.row].deviceName == "Coffee Machine"){
-            SocketIOManager.sharedInstance.sendCoffee()
+            
+            SocketIOManager.sharedInstance.chooseDevice("#coffee")
+            
             print("Coffee")
+            
         }else if(feedModelArray[indexPath!.row].deviceName == "Window"){
-            SocketIOManager.sharedInstance.sendWindow()
+            
+            SocketIOManager.sharedInstance.chooseDevice("#wind")
+            
             print("Window")
+            
         }
+        
     }
+    
 }
+
+

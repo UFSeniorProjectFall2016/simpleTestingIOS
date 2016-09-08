@@ -40,6 +40,7 @@
 		C075D76A1C5E17DD009F9044 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075D7541C5E17DD009F9044 /* SwiftRegex.swift */; };
 		C075D76B1C5E17DD009F9044 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075D7551C5E17DD009F9044 /* WebSocket.swift */; };
 		C075D76E1C5E187A009F9044 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075D76D1C5E187A009F9044 /* SocketIOManager.swift */; };
+		E445F24E1D777AAD00D9CBF8 /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */; };
 		E4CF4B461D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF4B441D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift */; };
 		E4CF4B471D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CF4B451D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib */; };
 		E4CF4B491D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF4B481D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift */; };
@@ -81,6 +82,7 @@
 		C075D7541C5E17DD009F9044 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 		C075D7551C5E17DD009F9044 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		C075D76D1C5E187A009F9044 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		E4CF4B441D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		E4CF4B451D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomTableViewCell.xib; sourceTree = "<group>"; };
 		E4CF4B481D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				C075D72E1C5E0E96009F9044 /* View Controllers */,
 				C075D71C1C5E0E81009F9044 /* AppDelegate.swift */,
 				C075D7201C5E0E81009F9044 /* Main.storyboard */,
+				E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */,
 				C075D7231C5E0E81009F9044 /* Assets.xcassets */,
 				C075D7251C5E0E81009F9044 /* LaunchScreen.storyboard */,
 				C075D7281C5E0E81009F9044 /* Info.plist */,
@@ -296,6 +299,7 @@
 				C075D75D1C5E17DD009F9044 /* SocketEnginePollable.swift in Sources */,
 				C075D7621C5E17DD009F9044 /* SocketIOClient.swift in Sources */,
 				C075D7681C5E17DD009F9044 /* SocketStringReader.swift in Sources */,
+				E445F24E1D777AAD00D9CBF8 /* ControlsTableViewController.swift in Sources */,
 				C075D7691C5E17DD009F9044 /* SocketTypes.swift in Sources */,
 				E4CF4B491D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift in Sources */,
 				C075D73D1C5E0F4E009F9044 /* BaseCell.swift in Sources */,
