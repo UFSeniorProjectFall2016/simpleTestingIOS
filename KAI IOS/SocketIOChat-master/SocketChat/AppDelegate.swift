@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,9 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Parse.setApplicationId("1YAwuZJvPzZaoGl9S4wkm5lDP7Gx5jZ4S30QPpAP", clientKey: "GKSVN4I5sCzxjytTCvMG5fUcFWJmeNKnCjJfzytr")
         // Override point for customization after application launch.
+        
+         
         UINavigationBar.appearance().barTintColor = UIColor(red: 238.0/255.0, green: 110.0/255.0, blue: 115.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        
 
 
         return true

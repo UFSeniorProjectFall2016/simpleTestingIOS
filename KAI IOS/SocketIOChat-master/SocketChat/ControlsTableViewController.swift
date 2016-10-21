@@ -14,6 +14,7 @@ class ControlsTableViewController: UITableViewController{
     @IBOutlet weak var lightUISwitch: UISwitch!
     @IBOutlet weak var coffeeUISwitch: UISwitch!
     @IBOutlet weak var windUISwitch: UISwitch!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBAction func connect(sender: AnyObject) {
         SocketIOManager.sharedInstance.connectToServer()
@@ -32,18 +33,39 @@ class ControlsTableViewController: UITableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if revealViewController() != nil{
+            print("hello")
+            
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
+        }
+        
+        
+        self.navigationController?.setToolbarHidden(false, animated: true)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleDeviceStatus:", name: "deviceStatus", object: nil)
         print("viewDidLoad")
+        
+      
+        
         
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         SocketIOManager.sharedInstance.connectToServer()
         
 
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +95,7 @@ class ControlsTableViewController: UITableViewController{
             let id = objectSwitched["id"] as! String
             let status = objectSwitched["status"] as! Bool
             print(status)
+           
             // let status = dataArray[0]["status"] as! String
             SocketIOManager.sharedInstance.switchDevice(id)
             socketSwitchReceived(id, status: status)
@@ -132,6 +155,25 @@ class ControlsTableViewController: UITableViewController{
         print("window")
     }
 
+    @IBAction func logout(sender: AnyObject) {
+        let alert = UIAlertController(title: "Are You Sure You Want To Log Out?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+      
+        alert.addAction(UIAlertAction(title: "Log Out", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            
+            
+           PFUser.logOut()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            if action == true {
+                self.dismissViewControllerAnimated(false, completion: nil)
+            }}))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
