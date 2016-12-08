@@ -9,7 +9,8 @@
 import UIKit
 
 class ControlsTableViewController: UITableViewController{
-    
+    var user = PFUser.currentUser()
+    var deviceCount = PFUser.currentUser()!["deviceCount"] as! Int
     @IBOutlet weak var doorUISwitch: UISwitch!
     @IBOutlet weak var lightUISwitch: UISwitch!
     @IBOutlet weak var coffeeUISwitch: UISwitch!
@@ -19,8 +20,8 @@ class ControlsTableViewController: UITableViewController{
     @IBAction func connect(sender: AnyObject) {
         SocketIOManager.sharedInstance.connectToServer()
     }
-    
-    var feedModelArray = [MyCustomTableViewCellModel]()
+   
+   // var feedModelArray = [MyCustomTableViewCellModel]()
     
     
     var users = [[String: AnyObject]]()
@@ -34,7 +35,7 @@ class ControlsTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         if revealViewController() != nil{
-            print("hello")
+          //  print("hello")
             
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -44,10 +45,21 @@ class ControlsTableViewController: UITableViewController{
         }
         
         
+        
         self.navigationController?.setToolbarHidden(false, animated: true)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleDeviceStatus:", name: "deviceStatus", object: nil)
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleDeviceStatus:", name: "deviceStatus", object: nil)
         print("viewDidLoad")
+        
+        
+        
+        doorUISwitch.on =  NSUserDefaults.standardUserDefaults().boolForKey("switchState")
+        lightUISwitch.on =  NSUserDefaults.standardUserDefaults().boolForKey("switchState2")
+        coffeeUISwitch.on =  NSUserDefaults.standardUserDefaults().boolForKey("switchState3")
+        windUISwitch.on  =  NSUserDefaults.standardUserDefaults().boolForKey("switchState4")
+
+
+
         
       
         
@@ -91,36 +103,49 @@ class ControlsTableViewController: UITableViewController{
         print("handleDeviceStatus")
         
         if let objectSwitched = notification.object as? [String: AnyObject]{
+            print("object")
             print(objectSwitched)
-            let id = objectSwitched["id"] as! String
-            let status = objectSwitched["status"] as! Bool
-            print(status)
+            let id = objectSwitched["_devid"] as! String
+            let status = objectSwitched["_status"] as! Int
+            let origin = objectSwitched["origin"] as! String
+            print(origin)
            
             // let status = dataArray[0]["status"] as! String
+            if(origin == "Web"){
             SocketIOManager.sharedInstance.switchDevice(id)
             socketSwitchReceived(id, status: status)
+            }
             
         }
         
     }
     
-    func socketSwitchReceived(id : String, status: Bool){
+        
+    func socketSwitchReceived(id : String, status: Int){
+        var stat = true
+        if(status == 0){
+            stat = false
+        }
         switch id{
+            
         
         case "#door":
-            doorUISwitch.setOn(status, animated: true)
-            print(id)
+            
+            doorUISwitch.setOn(stat, animated: true)
+            print(stat)
             
         case "#light":
-            lightUISwitch.setOn(status, animated: true)
-            print(id)
+            lightUISwitch.setOn(stat, animated: true)
+            print(stat)
 
         case "#coffee":
-            coffeeUISwitch.setOn(status, animated: true)
-            print(id)
+            coffeeUISwitch.setOn(stat, animated: true)
+            print(stat)
 
         case "#wind":
-            windUISwitch.setOn(status, animated: true)
+            windUISwitch.setOn(stat, animated: true)
+            print(stat)
+        case "#temperature":
             print(id)
 
         default:
@@ -131,29 +156,81 @@ class ControlsTableViewController: UITableViewController{
     }
     
     @IBAction func doorSwitched(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setBool(doorUISwitch.on, forKey: "switchState")
+        
         SocketIOManager.sharedInstance.chooseDevice("#door")
         print("door")
+        
+        if doorUISwitch.on{
+            userDevice.door = "Door is open"
+            userDevice.count--
+
+        }
+        else{
+            userDevice.door = "Door is closed"
+            userDevice.count++
+        }
         
     }
     
     
     @IBAction func lightSwitch(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setBool(lightUISwitch.on, forKey: "switchState2")
         SocketIOManager.sharedInstance.chooseDevice("#light")
         print("light")
+        if lightUISwitch.on{
+            userDevice.light = "Light is on"
+            userDevice.count--
+            
+        }
+        else{
+            userDevice.light = "Light is off"
+            userDevice.count++
+        }
+        
+
     }
     
     
     @IBAction func coffeeSwitch(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setBool(coffeeUISwitch.on, forKey: "switchState3")
         SocketIOManager.sharedInstance.chooseDevice("#coffee")
         print("coffee")
+        if coffeeUISwitch.on{
+            userDevice.coffee = "Coffee machine is on"
+            userDevice.count--
+        }
+        else{
+            userDevice.coffee = "Coffee machine is off"
+            userDevice.count++
+
+        }
+
     }
     
     
     
     @IBAction func windowSwitch(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setBool(windUISwitch.on, forKey: "switchState3")
         SocketIOManager.sharedInstance.chooseDevice("#wind")
         print("window")
+        if windUISwitch.on{
+            userDevice.window = "Window is open"
+            userDevice.count--
+        }
+        else{
+            userDevice.window = "Window is closed"
+            userDevice.count++
+
+        }
+
     }
+    
+    @IBAction func checkTemp(sender: AnyObject) {
+        SocketIOManager.sharedInstance.chooseDevice("#temperature")
+        print("temperature")
+    }
+    
 
     @IBAction func logout(sender: AnyObject) {
         let alert = UIAlertController(title: "Are You Sure You Want To Log Out?", message: "", preferredStyle: UIAlertControllerStyle.Alert)

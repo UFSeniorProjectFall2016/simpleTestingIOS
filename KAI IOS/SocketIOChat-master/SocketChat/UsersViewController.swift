@@ -1,5 +1,5 @@
 
-import UIKit
+/*import UIKit
 var newModel = MyCustomTableViewCellModel()
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -216,5 +216,5 @@ extension UsersViewController: MyCustomTableViewCellDelegate{
     }
     
 }
-
+*/
 

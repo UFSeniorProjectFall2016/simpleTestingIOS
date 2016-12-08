@@ -9,13 +9,31 @@
 import UIKit
 import Parse
 
-class customSignupViewController: UIViewController {
+extension UIImageView {
+    
+    func setRounded() {
+        let radius = CGRectGetWidth(self.frame) / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+}
 
+class customSignupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var firstField: UITextField!
+    @IBOutlet weak var lastField: UITextField!
     
     var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+    
+    var locationManager = CLLocationManager()
+   
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +44,8 @@ class customSignupViewController: UIViewController {
         self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         
         view.addSubview(self.actInd)
+        imagePicked.setRounded()
+       
     }
 
 
@@ -41,7 +61,7 @@ class customSignupViewController: UIViewController {
         
         // Display sign in / up view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("CustomLoginViewController") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("CustomLoginViewController")
         self.presentViewController(vc, animated: true, completion: nil)
     }
 
@@ -51,28 +71,69 @@ class customSignupViewController: UIViewController {
         
     }
     
+    @IBAction func uploadPicture(sender: AnyObject) {
+        let ImagePicker = UIImagePickerController()
+        ImagePicker.delegate = self
+        ImagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        ImagePicker.allowsEditing = true
+        self.presentViewController(ImagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        imagePicked.image = image
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
     @IBAction func signupAction(sender: AnyObject) {
-        var username = self.usernameField.text
-        var password = self.passwordField.text
-        var email = self.emailField.text
+        let upcomingImage = self.imagePicked.image
+        let imgData = UIImagePNGRepresentation(upcomingImage!)!
+        let file: PFFile = PFFile(data: imgData)!
+       // var lat = 123
+        //var lon = 123
+        //lat = locationManager.location!.coordinate.latitude
+        //lon = locationManager.location!.coordinate.longitude
+
+        let username = self.usernameField.text
+        let password = self.passwordField.text
+        let email = self.emailField.text
+        let first = self.firstField.text
+        let last = self.lastField.text
+   
+       // let myGeoPoint = PFGeoPoint(latitude: lat, longitude:lon)
+
+        
+        
         
         
         if(username?.characters.count < 4 || password?.characters.count < 5){
-            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 4 and Password must be greater than 5.", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Username must be greater than 4 and Password must be greater than 5.", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         }else if(!isValidEmail(email!)){
-            var alert = UIAlertView(title: "Invalid", message: "Please enter a valid email.", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Please enter a valid email.", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }else if(first == "" || last == ""){
+            let alert = UIAlertView(title: "Invalid", message: "Please enter a full name.", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }else{
             
             
             self.actInd.startAnimating()
             
-            var newUser = PFUser()
+            let newUser = PFUser()
+            
             newUser.username = username?.lowercaseString
             newUser.password = password?.lowercaseString
             newUser.email = email?.lowercaseString
+            newUser["firstname"] = first?.lowercaseString
+            newUser["lastname"] = last?.lowercaseString
+            newUser["profilepicture"] = file
+           // newUser["homeAddress"] = myGeoPoint
+            
+
+            
+            
+            
             
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                 
@@ -98,8 +159,7 @@ class customSignupViewController: UIViewController {
                     
                     
                 }else{
-                    
-                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     
                 }

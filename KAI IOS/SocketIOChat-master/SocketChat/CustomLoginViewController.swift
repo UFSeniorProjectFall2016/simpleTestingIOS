@@ -27,6 +27,25 @@ var tField: UITextField!
         
         view.addSubview(self.actInd)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"home.png"]];
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight ||
+            UIDevice.currentDevice().orientation == UIDeviceOrientation.Unknown) {
+                return false
+        }
+        else {
+            return true
+        }
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [UIInterfaceOrientationMask.Portrait ,UIInterfaceOrientationMask.PortraitUpsideDown]
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,12 +67,12 @@ var tField: UITextField!
     @IBAction func loginAction(sender: AnyObject) {
         
         
-        var username = self.usernameField.text
-        var password = self.passwordField.text
+        let username = self.usernameField.text
+        let password = self.passwordField.text
         
         
         if(username?.characters.count < 4 || password?.characters.count < 5){
-            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 4 and Password must be greater than 5.", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Username must be greater than 4 and Password must be greater than 5.", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         }else{
@@ -86,7 +105,7 @@ var tField: UITextField!
                 
               else{
                    
-                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     
                 }
@@ -115,7 +134,7 @@ var tField: UITextField!
         var email = ""
         
         
-        var alert = UIAlertController(title: "Enter Email", message: "", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Enter Email", message: "", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler(configurationTextField)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:handleCancel))

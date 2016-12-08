@@ -57,20 +57,45 @@
 		E41918EE1D90F06F0056CE7C /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41918E81D90F06F0056CE7C /* ParseFacebookUtilsV4.framework */; };
 		E41918EF1D90F06F0056CE7C /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41918E91D90F06F0056CE7C /* ParseTwitterUtils.framework */; };
 		E41918F01D90F06F0056CE7C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41918EA1D90F06F0056CE7C /* ParseUI.framework */; };
-		E41918F41D90F20E0056CE7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41918F31D90F20E0056CE7C /* ViewController.swift */; };
 		E41918FA1D91B86C0056CE7C /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = E41918F81D91B86C0056CE7C /* login.png */; };
 		E41918FB1D91B86C0056CE7C /* logout (1).png in Resources */ = {isa = PBXBuildFile; fileRef = E41918F91D91B86C0056CE7C /* logout (1).png */; };
 		E41918FD1D91BAC10056CE7C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41918FC1D91BAC10056CE7C /* LoginViewController.swift */; };
 		E41919011D9229EF0056CE7C /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E41919001D9229EF0056CE7C /* logo2.png */; };
+		E4194B381DE641D000037D94 /* changePassword1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4194B371DE641D000037D94 /* changePassword1TableViewController.swift */; };
+		E4194B3A1DE6422200037D94 /* changePassword2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4194B391DE6422200037D94 /* changePassword2TableViewController.swift */; };
 		E42746231D95AFBB0043690F /* CustomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42746221D95AFBB0043690F /* CustomLoginViewController.swift */; };
 		E42746251D95B0660043690F /* customSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42746241D95B0660043690F /* customSignupViewController.swift */; };
 		E43211B51DAF42A30058643E /* Menu-64.png in Resources */ = {isa = PBXBuildFile; fileRef = E43211B41DAF42A30058643E /* Menu-64.png */; };
+		E43452E31DF90088009E5E2F /* myhouse.png in Resources */ = {isa = PBXBuildFile; fileRef = E43452E11DF90088009E5E2F /* myhouse.png */; };
+		E43452E41DF90088009E5E2F /* myhouse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E43452E21DF90088009E5E2F /* myhouse@2x.png */; };
 		E445F24E1D777AAD00D9CBF8 /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */; };
+		E44BDDBE1DE524A200D038E1 /* PreSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BDDBD1DE524A200D038E1 /* PreSettingsTableViewController.swift */; };
+		E460A5041DE6EFDC00F290CF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E460A5031DE6EFDC00F290CF /* HomeTableViewController.swift */; };
+		E460A5061DE78CB200F290CF /* Temperature-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E460A5051DE78CB200F290CF /* Temperature-50.png */; };
+		E460A5081DE78CB900F290CF /* Humidity-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E460A5071DE78CB900F290CF /* Humidity-50.png */; };
+		E460A50A1DE78CBE00F290CF /* Globe Bulb-48.png in Resources */ = {isa = PBXBuildFile; fileRef = E460A5091DE78CBE00F290CF /* Globe Bulb-48.png */; };
+		E460A50C1DE78DA200F290CF /* day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A50B1DE78DA200F290CF /* day.jpg */; };
+		E460A50E1DE78DAF00F290CF /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A50D1DE78DAF00F290CF /* night.jpg */; };
+		E460A5101DE79A9800F290CF /* day2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A50F1DE79A9800F290CF /* day2.jpg */; };
+		E460A5121DE79A9E00F290CF /* sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A5111DE79A9E00F290CF /* sunset.jpg */; };
+		E460A5141DE7A40000F290CF /* globalKaiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E460A5131DE7A40000F290CF /* globalKaiFile.swift */; };
+		E460A5161DE7A81000F290CF /* Message-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E460A5151DE7A81000F290CF /* Message-50.png */; };
+		E460A5181DE7ACAE00F290CF /* nightsky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A5171DE7ACAE00F290CF /* nightsky.jpg */; };
+		E460A51A1DE7ACEE00F290CF /* sunsetsky.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E460A5191DE7ACEE00F290CF /* sunsetsky.jpeg */; };
+		E460A51C1DE7ACFB00F290CF /* sunrisesky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A51B1DE7ACFB00F290CF /* sunrisesky.jpg */; };
+		E460A51E1DE7AD1D00F290CF /* daysky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E460A51D1DE7AD1D00F290CF /* daysky.jpg */; };
 		E4759FEE1DA1E7B600CBA35F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4759FED1DA1E7B600CBA35F /* SWRevealViewController.m */; };
 		E4759FF91DA22E1300CBA35F /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4759FF81DA22E1300CBA35F /* SidebarTableViewController.swift */; };
-		E4CF4B461D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF4B441D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift */; };
-		E4CF4B471D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4CF4B451D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib */; };
-		E4CF4B491D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF4B481D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift */; };
+		E484CE551DC2CD4C009E84F9 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E484CE541DC2CD4C009E84F9 /* home.jpg */; };
+		E485A3221DE64FA900CA8D14 /* Lock-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A3211DE64FA900CA8D14 /* Lock-50.png */; };
+		E485A3241DE64FAF00CA8D14 /* User-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A3231DE64FAF00CA8D14 /* User-50.png */; };
+		E485A3261DE64FB500CA8D14 /* About-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A3251DE64FB500CA8D14 /* About-50.png */; };
+		E485A3281DE64FBC00CA8D14 /* Form-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A3271DE64FBC00CA8D14 /* Form-50.png */; };
+		E485A32A1DE64FC200CA8D14 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A3291DE64FC200CA8D14 /* Home-50.png */; };
+		E485A32C1DE64FC700CA8D14 /* Manager-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A32B1DE64FC700CA8D14 /* Manager-50.png */; };
+		E485A32E1DE64FCC00CA8D14 /* Multiple Devices-48.png in Resources */ = {isa = PBXBuildFile; fileRef = E485A32D1DE64FCC00CA8D14 /* Multiple Devices-48.png */; };
+		E4DCFC741DE6617D00102ACC /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DCFC731DE6617D00102ACC /* AboutPageViewController.swift */; };
+		E4E285CB1DE1361200991C74 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E285CA1DE1361200991C74 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,21 +154,46 @@
 		E41918E81D90F06F0056CE7C /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		E41918E91D90F06F0056CE7C /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		E41918EA1D90F06F0056CE7C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		E41918F31D90F20E0056CE7C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E41918F81D91B86C0056CE7C /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		E41918F91D91B86C0056CE7C /* logout (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout (1).png"; sourceTree = "<group>"; };
 		E41918FC1D91BAC10056CE7C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = SocketChat/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		E41919001D9229EF0056CE7C /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		E4194B371DE641D000037D94 /* changePassword1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePassword1TableViewController.swift; sourceTree = "<group>"; };
+		E4194B391DE6422200037D94 /* changePassword2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePassword2TableViewController.swift; sourceTree = "<group>"; };
 		E42746221D95AFBB0043690F /* CustomLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoginViewController.swift; sourceTree = "<group>"; };
 		E42746241D95B0660043690F /* customSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customSignupViewController.swift; sourceTree = "<group>"; };
 		E43211B41DAF42A30058643E /* Menu-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-64.png"; sourceTree = "<group>"; };
+		E43452E11DF90088009E5E2F /* myhouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myhouse.png; sourceTree = "<group>"; };
+		E43452E21DF90088009E5E2F /* myhouse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myhouse@2x.png"; sourceTree = "<group>"; };
 		E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
+		E44BDDBD1DE524A200D038E1 /* PreSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreSettingsTableViewController.swift; sourceTree = "<group>"; };
+		E460A5031DE6EFDC00F290CF /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		E460A5051DE78CB200F290CF /* Temperature-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Temperature-50.png"; sourceTree = "<group>"; };
+		E460A5071DE78CB900F290CF /* Humidity-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Humidity-50.png"; sourceTree = "<group>"; };
+		E460A5091DE78CBE00F290CF /* Globe Bulb-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Globe Bulb-48.png"; sourceTree = "<group>"; };
+		E460A50B1DE78DA200F290CF /* day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = day.jpg; sourceTree = "<group>"; };
+		E460A50D1DE78DAF00F290CF /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = night.jpg; sourceTree = "<group>"; };
+		E460A50F1DE79A9800F290CF /* day2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = day2.jpg; sourceTree = "<group>"; };
+		E460A5111DE79A9E00F290CF /* sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunset.jpg; sourceTree = "<group>"; };
+		E460A5131DE7A40000F290CF /* globalKaiFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalKaiFile.swift; sourceTree = "<group>"; };
+		E460A5151DE7A81000F290CF /* Message-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Message-50.png"; sourceTree = "<group>"; };
+		E460A5171DE7ACAE00F290CF /* nightsky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nightsky.jpg; sourceTree = "<group>"; };
+		E460A5191DE7ACEE00F290CF /* sunsetsky.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunsetsky.jpeg; sourceTree = "<group>"; };
+		E460A51B1DE7ACFB00F290CF /* sunrisesky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrisesky.jpg; sourceTree = "<group>"; };
+		E460A51D1DE7AD1D00F290CF /* daysky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daysky.jpg; sourceTree = "<group>"; };
 		E4759FEC1DA1E7B600CBA35F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		E4759FED1DA1E7B600CBA35F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		E4759FF81DA22E1300CBA35F /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarTableViewController.swift; path = ../SidebarTableViewController.swift; sourceTree = "<group>"; };
-		E4CF4B441D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
-		E4CF4B451D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomTableViewCell.xib; sourceTree = "<group>"; };
-		E4CF4B481D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCellModel.swift; sourceTree = "<group>"; };
+		E484CE541DC2CD4C009E84F9 /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpg; sourceTree = "<group>"; };
+		E485A3211DE64FA900CA8D14 /* Lock-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lock-50.png"; sourceTree = "<group>"; };
+		E485A3231DE64FAF00CA8D14 /* User-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User-50.png"; sourceTree = "<group>"; };
+		E485A3251DE64FB500CA8D14 /* About-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About-50.png"; sourceTree = "<group>"; };
+		E485A3271DE64FBC00CA8D14 /* Form-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Form-50.png"; sourceTree = "<group>"; };
+		E485A3291DE64FC200CA8D14 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
+		E485A32B1DE64FC700CA8D14 /* Manager-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Manager-50.png"; sourceTree = "<group>"; };
+		E485A32D1DE64FCC00CA8D14 /* Multiple Devices-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Multiple Devices-48.png"; sourceTree = "<group>"; };
+		E4DCFC731DE6617D00102ACC /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
+		E4E285CA1DE1361200991C74 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +227,30 @@
 		C075D7101C5E0E81009F9044 = {
 			isa = PBXGroup;
 			children = (
+				E43452E11DF90088009E5E2F /* myhouse.png */,
+				E43452E21DF90088009E5E2F /* myhouse@2x.png */,
+				E485A3201DE64CBB00CA8D14 /* Pictures */,
+				E484CE541DC2CD4C009E84F9 /* home.jpg */,
 				E43211B41DAF42A30058643E /* Menu-64.png */,
+				E460A50F1DE79A9800F290CF /* day2.jpg */,
+				E460A50B1DE78DA200F290CF /* day.jpg */,
+				E460A51D1DE7AD1D00F290CF /* daysky.jpg */,
+				E460A5171DE7ACAE00F290CF /* nightsky.jpg */,
+				E460A5151DE7A81000F290CF /* Message-50.png */,
+				E460A5191DE7ACEE00F290CF /* sunsetsky.jpeg */,
+				E460A51B1DE7ACFB00F290CF /* sunrisesky.jpg */,
+				E460A5111DE79A9E00F290CF /* sunset.jpg */,
+				E460A50D1DE78DAF00F290CF /* night.jpg */,
+				E485A3211DE64FA900CA8D14 /* Lock-50.png */,
+				E460A5091DE78CBE00F290CF /* Globe Bulb-48.png */,
+				E485A3231DE64FAF00CA8D14 /* User-50.png */,
+				E460A5071DE78CB900F290CF /* Humidity-50.png */,
+				E485A3251DE64FB500CA8D14 /* About-50.png */,
+				E485A3271DE64FBC00CA8D14 /* Form-50.png */,
+				E460A5051DE78CB200F290CF /* Temperature-50.png */,
+				E485A3291DE64FC200CA8D14 /* Home-50.png */,
+				E485A32B1DE64FC700CA8D14 /* Manager-50.png */,
+				E485A32D1DE64FCC00CA8D14 /* Multiple Devices-48.png */,
 				E41918E41D90F06F0056CE7C /* parse-library-1.12.0 */,
 				E41918C61D90E8B00056CE7C /* Social.framework */,
 				E41918C41D90E8A50056CE7C /* Accounts.framework */,
@@ -213,10 +286,10 @@
 				C075D7331C5E0EC9009F9044 /* Custom Cells */,
 				C075D72E1C5E0E96009F9044 /* View Controllers */,
 				C075D71C1C5E0E81009F9044 /* AppDelegate.swift */,
+				C075D7281C5E0E81009F9044 /* Info.plist */,
 				C075D7201C5E0E81009F9044 /* Main.storyboard */,
 				C075D7231C5E0E81009F9044 /* Assets.xcassets */,
 				C075D7251C5E0E81009F9044 /* LaunchScreen.storyboard */,
-				C075D7281C5E0E81009F9044 /* Info.plist */,
 				E41918D21D90EC430056CE7C /* SocketChat-Bridging-Header.h */,
 			);
 			path = SocketChat;
@@ -231,12 +304,14 @@
 				E41918FC1D91BAC10056CE7C /* LoginViewController.swift */,
 				E42746221D95AFBB0043690F /* CustomLoginViewController.swift */,
 				C075D72F1C5E0EB1009F9044 /* UsersViewController.swift */,
-				E4CF4B481D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift */,
-				E4CF4B441D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift */,
-				E4CF4B451D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib */,
-				E41918F31D90F20E0056CE7C /* ViewController.swift */,
+				E4194B371DE641D000037D94 /* changePassword1TableViewController.swift */,
+				E4194B391DE6422200037D94 /* changePassword2TableViewController.swift */,
 				E42746241D95B0660043690F /* customSignupViewController.swift */,
+				E4E285CA1DE1361200991C74 /* SettingsTableViewController.swift */,
 				E445F24D1D777AAD00D9CBF8 /* ControlsTableViewController.swift */,
+				E4DCFC731DE6617D00102ACC /* AboutPageViewController.swift */,
+				E44BDDBD1DE524A200D038E1 /* PreSettingsTableViewController.swift */,
+				E460A5031DE6EFDC00F290CF /* HomeTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				C075D76D1C5E187A009F9044 /* SocketIOManager.swift */,
+				E460A5131DE7A40000F290CF /* globalKaiFile.swift */,
 			);
 			name = SocketIO;
 			sourceTree = "<group>";
@@ -320,6 +396,13 @@
 				E41918F91D91B86C0056CE7C /* logout (1).png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		E485A3201DE64CBB00CA8D14 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +437,12 @@
 				TargetAttributes = {
 					C075D7181C5E0E81009F9044 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = UE6S3WWHDC;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -381,15 +470,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				E43211B51DAF42A30058643E /* Menu-64.png in Resources */,
-				E4CF4B471D3B0DFC0081A1D7 /* MyCustomTableViewCell.xib in Resources */,
+				E460A51E1DE7AD1D00F290CF /* daysky.jpg in Resources */,
+				E460A51C1DE7ACFB00F290CF /* sunrisesky.jpg in Resources */,
+				E460A5081DE78CB900F290CF /* Humidity-50.png in Resources */,
+				E485A3221DE64FA900CA8D14 /* Lock-50.png in Resources */,
+				E460A50A1DE78CBE00F290CF /* Globe Bulb-48.png in Resources */,
+				E484CE551DC2CD4C009E84F9 /* home.jpg in Resources */,
 				C075D7351C5E0EDC009F9044 /* UserCell.xib in Resources */,
+				E460A5101DE79A9800F290CF /* day2.jpg in Resources */,
 				C075D7271C5E0E81009F9044 /* LaunchScreen.storyboard in Resources */,
+				E485A32E1DE64FCC00CA8D14 /* Multiple Devices-48.png in Resources */,
+				E460A5061DE78CB200F290CF /* Temperature-50.png in Resources */,
+				E43452E41DF90088009E5E2F /* myhouse@2x.png in Resources */,
 				C075D7391C5E0EFC009F9044 /* ChatCell.xib in Resources */,
+				E460A50E1DE78DAF00F290CF /* night.jpg in Resources */,
+				E485A3241DE64FAF00CA8D14 /* User-50.png in Resources */,
+				E460A5161DE7A81000F290CF /* Message-50.png in Resources */,
 				E41919011D9229EF0056CE7C /* logo2.png in Resources */,
+				E485A32A1DE64FC200CA8D14 /* Home-50.png in Resources */,
 				C075D7241C5E0E81009F9044 /* Assets.xcassets in Resources */,
+				E485A3261DE64FB500CA8D14 /* About-50.png in Resources */,
+				E460A5181DE7ACAE00F290CF /* nightsky.jpg in Resources */,
+				E460A51A1DE7ACEE00F290CF /* sunsetsky.jpeg in Resources */,
 				E41918FB1D91B86C0056CE7C /* logout (1).png in Resources */,
 				C075D7221C5E0E81009F9044 /* Main.storyboard in Resources */,
 				E41918FA1D91B86C0056CE7C /* login.png in Resources */,
+				E485A32C1DE64FC700CA8D14 /* Manager-50.png in Resources */,
+				E43452E31DF90088009E5E2F /* myhouse.png in Resources */,
+				E460A5121DE79A9E00F290CF /* sunset.jpg in Resources */,
+				E460A50C1DE78DA200F290CF /* day.jpg in Resources */,
+				E485A3281DE64FBC00CA8D14 /* Form-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,19 +521,22 @@
 				C075D73B1C5E0F10009F9044 /* ChatCell.swift in Sources */,
 				C075D7611C5E17DD009F9044 /* SocketFixUTF8.swift in Sources */,
 				C075D76A1C5E17DD009F9044 /* SwiftRegex.swift in Sources */,
+				E4194B3A1DE6422200037D94 /* changePassword2TableViewController.swift in Sources */,
+				E460A5041DE6EFDC00F290CF /* HomeTableViewController.swift in Sources */,
+				E460A5141DE7A40000F290CF /* globalKaiFile.swift in Sources */,
 				C075D7571C5E17DD009F9044 /* SocketAckManager.swift in Sources */,
 				E4759FF91DA22E1300CBA35F /* SidebarTableViewController.swift in Sources */,
 				C075D76B1C5E17DD009F9044 /* WebSocket.swift in Sources */,
+				E4194B381DE641D000037D94 /* changePassword1TableViewController.swift in Sources */,
 				C075D7561C5E17DD009F9044 /* SocketAckEmitter.swift in Sources */,
-				E41918F41D90F20E0056CE7C /* ViewController.swift in Sources */,
 				C075D75C1C5E17DD009F9044 /* SocketEnginePacketType.swift in Sources */,
 				E42746251D95B0660043690F /* customSignupViewController.swift in Sources */,
 				C075D7661C5E17DD009F9044 /* SocketPacket.swift in Sources */,
+				E44BDDBE1DE524A200D038E1 /* PreSettingsTableViewController.swift in Sources */,
 				C075D7601C5E17DD009F9044 /* SocketEventHandler.swift in Sources */,
 				C075D7631C5E17DD009F9044 /* SocketIOClientOption.swift in Sources */,
 				E42746231D95AFBB0043690F /* CustomLoginViewController.swift in Sources */,
 				C075D76E1C5E187A009F9044 /* SocketIOManager.swift in Sources */,
-				E4CF4B461D3B0DFC0081A1D7 /* MyCustomTableViewCell.swift in Sources */,
 				E4759FEE1DA1E7B600CBA35F /* SWRevealViewController.m in Sources */,
 				E41918FD1D91BAC10056CE7C /* LoginViewController.swift in Sources */,
 				C075D75F1C5E17DD009F9044 /* SocketEngineWebsocket.swift in Sources */,
@@ -433,8 +546,9 @@
 				C075D7681C5E17DD009F9044 /* SocketStringReader.swift in Sources */,
 				E445F24E1D777AAD00D9CBF8 /* ControlsTableViewController.swift in Sources */,
 				C075D7691C5E17DD009F9044 /* SocketTypes.swift in Sources */,
-				E4CF4B491D3B1FE90081A1D7 /* MyCustomTableViewCellModel.swift in Sources */,
 				C075D73D1C5E0F4E009F9044 /* BaseCell.swift in Sources */,
+				E4DCFC741DE6617D00102ACC /* AboutPageViewController.swift in Sources */,
+				E4E285CB1DE1361200991C74 /* SettingsTableViewController.swift in Sources */,
 				C075D7651C5E17DD009F9044 /* SocketLogger.swift in Sources */,
 				C075D71D1C5E0E81009F9044 /* AppDelegate.swift in Sources */,
 			);
@@ -550,6 +664,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
@@ -558,8 +674,9 @@
 				INFOPLIST_FILE = SocketChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SocketChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KAI.homesystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SocketChat/SocketChat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -570,6 +687,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(inherited)",
@@ -579,8 +698,9 @@
 				INFOPLIST_FILE = SocketChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SocketChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KAI.homesystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SocketChat/SocketChat-Bridging-Header.h";
 			};
 			name = Release;
